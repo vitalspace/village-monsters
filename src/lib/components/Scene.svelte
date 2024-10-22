@@ -1,81 +1,160 @@
 <script lang="ts">
-  import { T } from '@threlte/core'
-  import { ContactShadows, Float, Grid, OrbitControls } from '@threlte/extras'
+  import { T } from "@threlte/core";
+  import {
+    OrbitControls,
+    TransformControls,
+    Grid,
+    Stars,
+  } from "@threlte/extras";
+  import { SheetObject } from "@threlte/theatre";
+  import Princess from "./Princes.svelte";
+
+  import Text3D from "./Text.svelte";
+  import TextLines from "./TextLines.svelte";
+
+  import Tumba3D from "./Tumba.svelte";
+  import Cabana from "./Farm.svelte";
+  import TurnIntoZombie from "./TurnIntoZombie.svelte";
+  import TurnIntoVampire from "./TurnIntoVampire.svelte";
+
+  let capture: (() => void) | undefined;
+
+  let objectRef: any;
+
+  const onObjectChange = () => {
+    console.log({
+      x: objectRef.parent.position.x,
+      y: objectRef.parent.position.y,
+      z: objectRef.parent.position.z,
+    });
+  };
 </script>
 
-<T.PerspectiveCamera
-  makeDefault
-  position={[-10, 10, 10]}
-  fov={15}
->
-  <OrbitControls
-    autoRotate
-    enableZoom={false}
-    enableDamping
-    autoRotateSpeed={0.5}
-    target.y={1.5}
+<!-- <SheetObject key="Camera" let:Sync>
+  <T.PerspectiveCamera makeDefault>
+    <Sync position rotation bind:capture />
+    <OrbitControls on:change={capture} />
+  </T.PerspectiveCamera>
+</SheetObject> -->
+
+// calabaza
+<T.PointLight
+  color="red"
+  distance={1}
+  intensity={60}
+  position={[1.630053234125596, 6.6, 1.0117212713266142]}
+/>
+
+//buho
+<T.PointLight
+  color="lightblue"
+  intensity={50}
+  distance={0.6}
+  position={[3.341960622750322, 4.5, 2.5]}
+  decay={0.1}
+/>
+
+//hongos
+<T.PointLight
+  color="green"
+  intensity={10}
+  distance={1}
+  position={[2.8092706730708, 0.5, 9.62126638893455]}
+  decay={2.5}
+/>
+
+<T.PointLight
+  color="yellow"
+  intensity={10}
+  distance={0.5}
+  position={[-2.8800683301477066, 0.5, 9.959214220019135]}
+  decay={0.5}
+/>
+
+// zombie // zombie luz hongo
+<T.PointLight
+  color="purple"
+  intensity={10}
+  distance={1}
+  position={[7.461788462932923, 0.8185498030704212, 9.348420025478028]}
+  decay={5}
+/>
+
+// luz tumba zombie
+<T.PointLight
+  color="blue"
+  intensity={10}
+  distance={1}
+  position={[6.893057593453487, 0.9552856290134311, 8.447702083997749]}
+  decay={5}
+/>
+
+// zombie luz hongo
+<T.PointLight
+  color="cyan"
+  intensity={10}
+  distance={1}
+  position={[6.169667413077238, 0.6027281778639939, 8.001316118250024]}
+  decay={0.1}
+/>
+
+// luz Vampire hongo 1
+<T.PointLight
+  color="orange"
+  intensity={10}
+  distance={1}
+  position={[-6.626421368107097, 0.9, 7.145591950391928]}
+  decay={0.1}
+/>
+
+// luz tumba hongo 2
+<T.PointLight
+  color="magenta"
+  intensity={10}
+  distance={1}
+  position={[-8.323892353756552, 0.9, 8.85192723846501]}
+  decay={0.1}
+/>
+
+// luz tumba
+<T.PointLight
+  color="cyan"
+  intensity={10}
+  distance={1}
+  position={[-7.56623555801335, 1.1914898562343625, 7.8023950751288]}
+  decay={5}
+/>
+
+// luz cabana
+<T.PointLight
+  color="red"
+  intensity={10}
+  distance={1}
+  position={[-8.059500276068842, 1.7938468533293084, 7.333426132995324]}
+  decay={0.2}
+/>
+
+<T.AmbientLight intensity={0.5} />
+
+<TransformControls object={objectRef} on:change={onObjectChange}>
+  <T.PointLight
+    color="lightorange"
+    intensity={500}
+    position={[0, 0, 0]}
+    bind:ref={objectRef}
   />
+</TransformControls>
+
+<TextLines />
+<Text3D />
+<!-- <Princess /> -->
+<Stars />
+<Tumba3D />
+<Cabana />
+
+<TurnIntoZombie />
+<TurnIntoVampire />
+
+<T.PerspectiveCamera makeDefault position={[0, 0, 5]}>
+  <OrbitControls autoRotate={false} autoRotateSpeed={2} enableDamping />
 </T.PerspectiveCamera>
-
-<T.DirectionalLight
-  intensity={0.8}
-  position.x={5}
-  position.y={10}
-/>
-<T.AmbientLight intensity={0.2} />
-
-<Grid
-  position.y={-0.001}
-  cellColor="#ffffff"
-  sectionColor="#ffffff"
-  sectionThickness={0}
-  fadeDistance={25}
-  cellSize={2}
-/>
-
-<ContactShadows
-  scale={10}
-  blur={2}
-  far={2.5}
-  opacity={0.5}
-/>
-
-<Float
-  floatIntensity={1}
-  floatingRange={[0, 1]}
->
-  <T.Mesh
-    position.y={1.2}
-    position.z={-0.75}
-  >
-    <T.BoxGeometry />
-    <T.MeshStandardMaterial color="#0059BA" />
-  </T.Mesh>
-</Float>
-
-<Float
-  floatIntensity={1}
-  floatingRange={[0, 1]}
->
-  <T.Mesh
-    position={[1.2, 1.5, 0.75]}
-    rotation.x={5}
-    rotation.y={71}
-  >
-    <T.TorusKnotGeometry args={[0.5, 0.15, 100, 12, 2, 3]} />
-    <T.MeshStandardMaterial color="#F85122" />
-  </T.Mesh>
-</Float>
-
-<Float
-  floatIntensity={1}
-  floatingRange={[0, 1]}
->
-  <T.Mesh
-    position={[-1.4, 1.5, 0.75]}
-    rotation={[-5, 128, 10]}
-  >
-    <T.IcosahedronGeometry />
-    <T.MeshStandardMaterial color="#F8EBCE" />
-  </T.Mesh>
-</Float>
