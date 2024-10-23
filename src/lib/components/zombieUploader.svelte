@@ -12,8 +12,8 @@
   let isImageReady = false; 
   let isImageLoading = false; 
 
-  const CLOUDINARY_UPLOAD_PRESET = "upload-unsigned-images";
-  const CLOUDINARY_CLOUD_NAME = "vitalspace";
+  const CLOUDINARY_UPLOAD_PRESET = "ramdom";
+  const CLOUDINARY_CLOUD_NAME = "ramdom";
 
   async function uploadImage() {
 
