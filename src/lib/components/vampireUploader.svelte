@@ -139,7 +139,7 @@
         on:click={triggerFileInput}
         class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded mr-2 transition-colors"
       >
-        Turn into Vampire
+        Human to Vampire
       </button>
   
       {#if isImageLoading} 

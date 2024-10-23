@@ -6,7 +6,7 @@
 
 {#if $activeButton === 1}
   <HTML
-    position={[1.8, 0.3320537693927156, 10.801296074998774]}
+    position={[1, 0.3320537693927156, 10.801296074998774]}
     rotation={[0, 0, 0]}
     transform
     scale={0.5}
@@ -18,12 +18,13 @@
       </div>
       <p>Zombies lurked, eager to</p>
       <p>devour what was left.</p>
+      <p>Click on <span class="text-cyan-500">Human to Zombie</span> to join the club.</p>
     </article>
   </HTML>
 {/if}
 
 {#if $activeButton === 2}
-  <HTML position={[-2.53, 0.5, 10]} rotation={[0, 0, 0]} transform scale={0.5}>
+  <HTML position={[-1.5, 0.5, 11]} rotation={[0, 0, 0]} transform scale={0.5}>
     <article class="bg-black rounded-lg p-4 text-white">
       <div class="flex space-x-2">
         <img class="w-5 h-5" src="./vampire.svg" alt="vampire.svg" />
@@ -31,6 +32,7 @@
       </div>
       <p>The vampires were out at dusk,</p>
       <p>looking for their next feast.</p>
+      <p>Click on <span class="text-cyan-500">Human to Vampire</span> to join the club.</p>
     </article>
   </HTML>
 {/if}

@@ -14,6 +14,16 @@ Command: npx @threlte/gltf@2.0.3 .\farm.glb -T
   export const { actions, mixer } = useGltfAnimations(gltf, ref)
 
   const component = forwardEventHandlers()
+
+  $: {
+    if ($actions.saludar) { 
+      $actions.saludar.setDuration(2);
+      // $actions.saludar.time = 5000
+      $actions.saludar.play()
+      // $actions.saludar.fadeOut(2);
+
+    }
+  }
 </script>
 
 <T is={ref} dispose={false} {...$$restProps} bind:this={$component}>
