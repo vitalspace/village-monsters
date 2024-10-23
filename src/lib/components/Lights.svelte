@@ -197,3 +197,12 @@
   position={[-0.8033057884892756, 1.3, -3.411356388055194]}
   decay={0.1}
 />
+
+// vitalspace
+<T.PointLight
+  color="orange"
+  intensity={10}
+  distance={2}
+  position={[0, 0, 9.43]}
+  decay={1}
+/>

@@ -12,7 +12,7 @@
   }
 </script>
 
-<div class="fixed top-10 right-0 mx-auto w-1/5 rounded-2xl py-4 text-center">
+<div class="fixed top-10 right-0 mx-auto w-1/5 rounded-2xl py-4 text-center z-50">
   <a href="https://github.com/vitalspace/village-monsters" target="_blank">
     <img class="w-8 h-8" src="./github.svg" alt="" />
   </a>
