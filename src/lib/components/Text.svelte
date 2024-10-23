@@ -3,18 +3,18 @@
   import { Text3DGeometry } from "@threlte/extras";
 </script>
 
-<T.Mesh position.x={-1} position.y={.5}>
+<T.Mesh position={[-2.5, 2.2, 9.43]}>
   <Text3DGeometry
-    size={0.2}
+    size={1}
     height={0.1}
     font="Doctor Terror_Regular.json"
-    text="Vital"
+    text="Monsters"
   />
 
   <T.MeshStandardMaterial
-    color="red"
+    color="pink"
     toneMapped={false}
-    metalness={1.0}
+    metalness={0.1}
     roughness={0.1}
   />
 </T.Mesh>
