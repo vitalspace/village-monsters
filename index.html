@@ -5,15 +5,15 @@
     <link rel="icon" href="./favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     
-		<link href="./_app/immutable/assets/2.C1KFU7W9.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.Deekx5OK.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/entry.ByyTYFqr.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.CqFNeIyo.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index.cK86NIh1.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.BBrEUnGD.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index.C-Pj4UQk.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/0.Jcchqypn.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/2.ZQKdYb4M.js">
+		<link href="./app/immutable/assets/2.C1KFU7W9.css" rel="stylesheet">
+		<link rel="modulepreload" href="./app/immutable/entry/start.Deekx5OK.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/entry.ByyTYFqr.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/scheduler.CqFNeIyo.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/index.cK86NIh1.js">
+		<link rel="modulepreload" href="./app/immutable/entry/app.BBrEUnGD.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/index.C-Pj4UQk.js">
+		<link rel="modulepreload" href="./app/immutable/nodes/0.Jcchqypn.js">
+		<link rel="modulepreload" href="./app/immutable/nodes/2.ZQKdYb4M.js">
   </head>
   <body data-sveltekit-preload-data="hover">
     <div style="display: contents">  <head data-svelte-h="svelte-12oguo1"><meta charset="UTF-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,8 +31,8 @@
 					const data = [null,null];
 
 					Promise.all([
-						import("./_app/immutable/entry/start.Deekx5OK.js"),
-						import("./_app/immutable/entry/app.BBrEUnGD.js")
+						import("./app/immutable/entry/start.Deekx5OK.js"),
+						import("./app/immutable/entry/app.BBrEUnGD.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 2],
